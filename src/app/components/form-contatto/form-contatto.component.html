@@ -1,0 +1,99 @@
+<div class="container py-3 px-2">
+    <header class=" d-flex justify-content-between">
+        <h5>Compila i campi per aggiungere un nuovo contatto</h5>
+        <a routerLink="/" class="mb-3">Torna alla Rubrica</a>
+    </header>
+    <form class="mt-3 row g-3" *ngIf="contattoForm" [formGroup]="contattoForm" (ngSubmit)="onSubmit()">
+      
+      <div class="col-md-6 d-flex">
+        <div class="form-check me-3">
+          <input type="radio" name="tipologia" id="fisica" value="fisica" class="form-check-input" formControlName="tipologia">
+          <label for="fisica" class="form-check-label">Persona fisica</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name="tipologia" id="giuridica" value="giuridica" class="form-check-input" formControlName="tipologia">
+          <label for="giuridica" class="form-check-label">Persona giuridica</label>
+        </div>
+      </div>
+      
+      <hr>
+      
+      <!-- Campo Nome, visibile solo per Persona Fisica -->
+      <div class="col-md-6" *ngIf="contattoForm.get('tipologia')?.value === 'fisica'">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" formControlName="nome">
+      </div>
+      
+      
+      <!-- Campo Cognome -->
+      <div class="col-md-6" *ngIf="contattoForm.get('tipologia')?.value === 'fisica'">
+        <label for="cognome" class="form-label">Cognome</label>
+        <input type="text" class="form-control" id="cognome" formControlName="cognome">
+      </div>
+      
+      <!-- Campo Data di Nascita -->
+      <div class="col-md-4" *ngIf="contattoForm.get('tipologia')?.value === 'fisica'">
+        <label for="dataNascita" class="form-label">Data di Nascita</label>
+        <input type="date" class="form-control" id="dataNascita" formControlName="dataNascita">
+      </div>
+      
+      <!-- Campo Ragione Sociale, visibile solo per Persona Giuridica -->
+      <div class="col-md-6" *ngIf="contattoForm.get('tipologia')?.value === 'giuridica'">
+        <label for="ragioneSociale" class="form-label">Ragione sociale</label>
+        <input type="text" class="form-control" id="ragioneSociale" formControlName="ragioneSociale">
+      </div>
+      
+      <!-- Sezione Indirizzo -->
+      <div formGroupName="indirizzo"  *ngIf="contattoForm.get('tipologia')?.value === 'fisica' || contattoForm.get('tipologia')?.value === 'giuridica'">
+        <h5>Indirizzo</h5>
+        <div class="col-12">
+          <label for="viaECivico" class="form-label">Via e numero civico</label>
+          <input type="text" class="form-control" id="viaECivico" formControlName="viaECivico">
+        </div>
+        <div class="col-md-6 mt-2">
+          <label for="citta" class="form-label">Città</label>
+          <input type="text" class="form-control" id="citta" formControlName="citta">
+        </div>
+        <div class="d-flex mt-2">
+          <div class="col-2">
+            <label for="provincia" class="form-label">Provincia</label>
+            <input type="text" class="form-control" id="provincia" formControlName="provincia">
+          </div>
+          <div class="col-2 mx-3">
+            <label for="cap" class="form-label">Cap</label>
+            <input type="text" class="form-control" id="cap" formControlName="cap">
+          </div>
+          <div class="col-4">
+            <label for="nazione" class="form-label">Nazione</label>
+            <input type="text" class="form-control" id="nazione" formControlName="nazione">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sezione Contatti -->
+      <div formGroupName="telefono"  *ngIf="contattoForm.get('tipologia')?.value === 'fisica' || contattoForm.get('tipologia')?.value === 'giuridica'">
+        <h5>Contatti</h5>
+        <div class="d-flex">
+          <div class="col-md-4 me-3">
+            <label for="prefisso" class="form-label">Prefisso internazionale</label>
+            <input type="text" class="form-control" id="prefisso" formControlName="prefissoInternazionale">
+          </div>
+          <div class="col-md-4">
+            <label for="numero" class="form-label">Numero di telefono</label>
+            <input type="text" class="form-control" id="numero" formControlName="numero">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Campo Email -->
+      <div class="col-md-6"  *ngIf="contattoForm.get('tipologia')?.value === 'fisica' || contattoForm.get('tipologia')?.value === 'giuridica'">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" formControlName="email">
+      </div>
+      
+      <!-- Bottone di submit -->
+      <div class="col-12"  *ngIf="contattoForm.get('tipologia')?.value === 'fisica' || contattoForm.get('tipologia')?.value === 'giuridica'">
+        <button type="submit" class="btn btn-primary" [disabled]="!contattoForm.valid && contattoForm.untouched">Aggiungi</button>
+      </div>
+    </form>
+  </div>
