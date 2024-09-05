@@ -10,6 +10,7 @@ import { ContattiListComponent } from './components/contatti-list/contatti-list.
 import { ContattoDetailComponent } from './components/contatto-detail/contatto-detail.component';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
 
 registerLocaleData(localeIt);
 
@@ -18,7 +19,8 @@ registerLocaleData(localeIt);
     AppComponent,
     FormContattoComponent,
     ContattiListComponent,
-    ContattoDetailComponent
+    ContattoDetailComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
