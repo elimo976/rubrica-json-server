@@ -79,6 +79,26 @@
       },
       "dataNascita": "",
       "id": "4"
+    },
+    {
+      "id": "5",
+      "tipologia": "fisica",
+      "nome": "Paolo",
+      "cognome": "Rossi",
+      "ragioneSociale": "",
+      "indirizzo": {
+        "viaECivico": "Piazza Pippo 4",
+        "citta": "Imola",
+        "provincia": "Bo",
+        "cap": "40026",
+        "nazione": "Italia"
+      },
+      "email": "paolorossi@gmail.com",
+      "telefono": {
+        "prefissoInternazionale": "0041",
+        "numero": "3456248677"
+      },
+      "dataNascita": "1980-03-04"
     }
   ]
 }
