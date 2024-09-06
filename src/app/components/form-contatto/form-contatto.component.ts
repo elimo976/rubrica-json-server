@@ -29,13 +29,13 @@ export class FormContattoComponent implements OnInit {
         viaECivico: new FormControl('', Validators.required),
         citta: new FormControl('', Validators.required),
         provincia: new FormControl(''),
-        cap: new FormControl('', [Validators.required, Validators.maxLength(5)]),
+        cap: new FormControl('', [Validators.required, Validators.maxLength(5), Validators.pattern(/^\d+$/)]),
         nazione: new FormControl('', Validators.required)
       }),
       email: new FormControl('', [Validators.required, Validators.email]),
       telefono: new FormGroup({
-        prefissoInternazionale: new FormControl('', [Validators.required, Validators.pattern(/^(00|\+)\d{1,3}$/)]),
-        numero: new FormControl('', [Validators.required, Validators.pattern(/^\d{1,4}[\s.-]?(?:\d{1,4}[\s.-]?){1,5}\d{1,9}$/)])
+        prefissoInternazionale: new FormControl('', [Validators.required, Validators.pattern(/^(00|\+)\d+$/), Validators.maxLength(5)]),
+        numero: new FormControl('', [Validators.required, Validators.pattern(/^\d{1,4}[\s.-]?(?:\d{1,4}[\s.-]?){1,5}\d{1,9}$/), Validators.maxLength(5)])
       }),
       dataNascita: new FormControl('')
     });

@@ -28,7 +28,7 @@
       <label for="nome" class="form-label">Nome</label>
       <input type="text" class="form-control" id="nome" formControlName="nome">
       <div *ngIf="contattoForm.get('nome')?.invalid && (contattoForm.get('nome')?.touched || contattoForm.pristine)" class="text-danger">
-        <div *ngIf="contattoForm.get('nome')?.errors?.['required']">Il nome è richiesto.</div>
+        <div class="mt-2" *ngIf="contattoForm.get('nome')?.errors?.['required']">Il nome è richiesto.</div>
       </div>
     </div>
     
@@ -37,7 +37,7 @@
       <label for="cognome" class="form-label">Cognome</label>
       <input type="text" class="form-control" id="cognome" formControlName="cognome">
       <div *ngIf="contattoForm.get('cognome')?.invalid && (contattoForm.get('cognome')?.touched || contattoForm.pristine)" class="text-danger">
-        <div *ngIf="contattoForm.get('cognome')?.errors?.['required']">Il cognome è richiesto.</div>
+        <div class="mt-2" *ngIf="contattoForm.get('cognome')?.errors?.['required']">Il cognome è richiesto.</div>
       </div>
     </div>
     
@@ -48,11 +48,11 @@
     </div>
     
     <!-- Campo Ragione Sociale, visibile solo per Persona Giuridica -->
-    <div class="col-md-6" *ngIf="contattoForm.get('tipologia')?.value === 'giuridica'">
+    <div class="col-md-8" *ngIf="contattoForm.get('tipologia')?.value === 'giuridica'">
       <label for="ragioneSociale" class="form-label">Ragione sociale</label>
       <input type="text" class="form-control" id="ragioneSociale" formControlName="ragioneSociale">
       <div *ngIf="contattoForm.get('ragioneSociale')?.invalid && (contattoForm.get('ragioneSociale')?.touched || contattoForm.pristine)" class="text-danger">
-        <div *ngIf="contattoForm.get('ragioneSociale')?.errors?.['required']">Campo obbligatorio</div>
+        <div class="mt-2" *ngIf="contattoForm.get('ragioneSociale')?.errors?.['required']">Campo obbligatorio</div>
       </div>
     </div>
     
@@ -63,69 +63,73 @@
         <label for="viaECivico" class="form-label">Via e numero civico</label>
         <input type="text" class="form-control" id="viaECivico" formControlName="viaECivico">
         <div *ngIf="contattoForm.get('indirizzo.viaECivico')?.invalid && (contattoForm.get('indirizzo.viaECivico')?.touched || contattoForm.pristine)" class="text-danger">
-          <div *ngIf="contattoForm.get('indirizzo.viaECivico')?.errors?.['required']">Campo obbligatorio</div>
+          <div class="mt-2" *ngIf="contattoForm.get('indirizzo.viaECivico')?.errors?.['required']">Campo obbligatorio</div>
         </div>
       </div>
-      <div class="col-md-6 mt-2">
+      <div class="col-md-8 mt-2">
         <label for="citta" class="form-label">Città</label>
         <input type="text" class="form-control" id="citta" formControlName="citta">
         <div *ngIf="contattoForm.get('indirizzo.citta')?.invalid && (contattoForm.get('indirizzo.citta')?.touched || contattoForm.pristine)" class="text-danger">
-          <div *ngIf="contattoForm.get('indirizzo.citta')?.errors?.['required']">Campo obbligatorio</div>
+          <div class="mt-2" *ngIf="contattoForm.get('indirizzo.citta')?.errors?.['required']">Campo obbligatorio</div>
         </div>
       </div>
-      <div class="d-flex mt-2">
-        <div class="col-2">
+      <div class="row mt-2">
+        <div class="col-12 col-md-4 mb-3 mb-md-0">
           <label for="provincia" class="form-label">Provincia</label>
           <input type="text" class="form-control" id="provincia" formControlName="provincia">
         </div>
-        <div class="col-2 mx-3">
+        <div class="col-12 col-md-4 mb-3 mb-md-0">
           <label for="cap" class="form-label">Cap</label>
           <input type="text" class="form-control" id="cap" formControlName="cap">
           <div *ngIf="contattoForm.get('indirizzo.cap')?.invalid && (contattoForm.get('indirizzo.cap')?.touched || contattoForm.pristine)" class="text-danger">
-            <div *ngIf="contattoForm.get('indirizzo.cap')?.errors?.['required']">Campo obbligatorio</div>
-            <div *ngIf="contattoForm.get('indirizzo.cap')?.errors?.['maxlength']">Il CAP deve avere al massimo 5 caratteri.</div>
+            <div class="mt-2" *ngIf="contattoForm.get('indirizzo.cap')?.errors?.['required']">Campo obbligatorio</div>
+            <div class="mt-2" *ngIf="contattoForm.get('indirizzo.cap')?.errors?.['maxlength']">Il CAP deve avere al massimo 5 caratteri.</div>
+            <div class="mt-2" *ngIf="contattoForm.get('indirizzo.cap')?.errors?.['pattern']">Il CAP accetta solo numeri.</div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4 mb-3 mb-md-0">
           <label for="nazione" class="form-label">Nazione</label>
           <input type="text" class="form-control" id="nazione" formControlName="nazione">
           <div *ngIf="contattoForm.get('indirizzo.nazione')?.invalid && (contattoForm.get('indirizzo.nazione')?.touched || contattoForm.pristine)" class="text-danger">
-            <div *ngIf="contattoForm.get('indirizzo.nazione')?.errors?.['required']">Campo obbligatorio</div>
+            <div class="mt-2" *ngIf="contattoForm.get('indirizzo.nazione')?.errors?.['required']">Campo obbligatorio</div>
           </div>
         </div>
       </div>
+      
     </div>
     
     <!-- Sezione Contatti -->
     <div formGroupName="telefono" *ngIf="contattoForm.get('tipologia')?.value === 'fisica' || contattoForm.get('tipologia')?.value === 'giuridica'">
       <h5>Contatti</h5>
-      <div class="d-flex">
-        <div class="col-md-4 me-3">
+      <div class="row">
+        <div class="col-md-4 mb-3 mb-md-0">
           <label for="prefisso" class="form-label">Prefisso internazionale</label>
           <input type="text" class="form-control" id="prefisso" formControlName="prefissoInternazionale">
           <div *ngIf="contattoForm.get('telefono.prefissoInternazionale')?.invalid && (contattoForm.get('telefono.prefissoInternazionale')?.touched || contattoForm.pristine)" class="text-danger">
-            <div *ngIf="contattoForm.get('telefono.prefissoInternazionale')?.errors?.['required']">Campo obbligatorio</div>
-            <div *ngIf="contattoForm.get('telefono.prefissoInternazionale')?.errors?.['pattern']">Il prefisso internazionale non è valido.</div>
+            <div class="mt-2" *ngIf="contattoForm.get('telefono.prefissoInternazionale')?.errors?.['required']">Campo obbligatorio</div>
+            <div class="mt-2" *ngIf="contattoForm.get('telefono.prefissoInternazionale')?.errors?.['pattern']">Il prefisso internazionale accetta solo numeri.</div>
+            <div class="mt-2" *ngIf="contattoForm.get('telefono.prefissoInternazionale')?.errors?.['maxlength']">Prefisso internazionale non valido.</div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3 mb-md-0">
           <label for="numero" class="form-label">Numero di telefono</label>
           <input type="text" class="form-control" id="numero" formControlName="numero">
           <div *ngIf="contattoForm.get('telefono.numero')?.invalid && (contattoForm.get('telefono.numero')?.touched || contattoForm.pristine)" class="text-danger">
-            <div *ngIf="contattoForm.get('telefono.numero')?.errors?.['required']">Campo obbligatorio</div>
-            <div *ngIf="contattoForm.get('telefono.numero')?.errors?.['pattern']">Il numero di telefono non è valido.</div>
+            <div class="mt-2" *ngIf="contattoForm.get('telefono.numero')?.errors?.['required']">Campo obbligatorio</div>
+            <div class="mt-2" *ngIf="contattoForm.get('telefono.numero')?.errors?.['pattern']">Il numero di telefono non è valido.</div>
           </div>
         </div>
       </div>
+      
     </div>
     
     <!-- Campo Email -->
-    <div class="col-md-6" *ngIf="contattoForm.get('tipologia')?.value === 'fisica' || contattoForm.get('tipologia')?.value === 'giuridica'">
+    <div class="col-md-8" *ngIf="contattoForm.get('tipologia')?.value === 'fisica' || contattoForm.get('tipologia')?.value === 'giuridica'">
       <label for="email" class="form-label">Email</label>
       <input type="text" class="form-control" id="email" formControlName="email">
       <div *ngIf="contattoForm.get('email')?.invalid && (contattoForm.get('email')?.touched || contattoForm.pristine)" class="text-danger">
-        <div *ngIf="contattoForm.get('email')?.errors?.['required']">Campo obbligatorio</div>
-        <div *ngIf="contattoForm.get('email')?.errors?.['email']">L'email non è valida.</div>
+        <div class="mt-2" *ngIf="contattoForm.get('email')?.errors?.['required']">Campo obbligatorio</div>
+        <div class="mt-2" *ngIf="contattoForm.get('email')?.errors?.['email']">L'email non è valida.</div>
       </div>
     </div>
     
