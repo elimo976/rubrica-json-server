@@ -35,7 +35,7 @@ export class FormContattoComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       telefono: new FormGroup({
         prefissoInternazionale: new FormControl('', [Validators.required, Validators.pattern(/^(00|\+)\d+$/), Validators.maxLength(5)]),
-        numero: new FormControl('', [Validators.required, Validators.pattern(/^\d{1,4}[\s.-]?(?:\d{1,4}[\s.-]?){1,5}\d{1,9}$/), Validators.maxLength(5)])
+        numero: new FormControl('', [Validators.required, Validators.pattern(/^\d{1,4}[\s.-]?(?:\d{1,4}[\s.-]?){1,5}\d{1,9}$/)])
       }),
       dataNascita: new FormControl('')
     });
@@ -56,6 +56,7 @@ export class FormContattoComponent implements OnInit {
   }
 
   onSubmit(): void {
+
     if (this.contattoForm!.valid) {
       const contattoData = this.contattoForm!.value as Omit<Contatto, 'id'>;
 
@@ -79,7 +80,7 @@ export class FormContattoComponent implements OnInit {
         });
       }
     } else {
-      console.log('Il modulo non è valido.');
+      console.log('Il modulo non è valido. Errori:', this.contattoForm?.errors);
     }
   }
 }

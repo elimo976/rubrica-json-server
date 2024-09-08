@@ -1,5 +1,4 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
 
@@ -9,8 +8,9 @@ import { FormContattoComponent } from './components/form-contatto/form-contatto.
 import { ContattiListComponent } from './components/contatti-list/contatti-list.component';
 import { ContattoDetailComponent } from './components/contatto-detail/contatto-detail.component';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 registerLocaleData(localeIt);
 
@@ -26,7 +26,8 @@ registerLocaleData(localeIt);
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'it-IT'}

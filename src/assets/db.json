@@ -47,7 +47,7 @@
       "cognome": "Rossi",
       "ragioneSociale": "",
       "indirizzo": {
-        "viaECivico": "72",
+        "viaECivico": "Via Mantova 72",
         "citta": "Verona",
         "provincia": "VR",
         "cap": "37100",
@@ -61,12 +61,13 @@
       "dataNascita": "1986-12-03"
     },
     {
+      "id": "4",
       "tipologia": "giuridica",
       "nome": "",
       "cognome": "",
       "ragioneSociale": "Panificio del Sole",
       "indirizzo": {
-        "viaECivico": "Via Mantova, 7",
+        "viaECivico": "Via Parma, 34",
         "citta": "Roma",
         "provincia": "RM",
         "cap": "00196",
@@ -74,11 +75,10 @@
       },
       "email": "panificiodelsole@gmail.com",
       "telefono": {
-        "prefissoInternazionale": "0039",
-        "numero": "3294345689"
+        "prefissoInternazionale": "+39",
+        "numero": "3456345678"
       },
-      "dataNascita": "",
-      "id": "4"
+      "dataNascita": ""
     }
   ]
 }
