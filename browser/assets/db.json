@@ -47,7 +47,7 @@
       "cognome": "Rossi",
       "ragioneSociale": "",
       "indirizzo": {
-        "viaECivico": "Via Mantova 72",
+        "viaECivico": "72",
         "citta": "Verona",
         "provincia": "VR",
         "cap": "37100",
@@ -61,13 +61,12 @@
       "dataNascita": "1986-12-03"
     },
     {
-      "id": "4",
       "tipologia": "giuridica",
       "nome": "",
       "cognome": "",
       "ragioneSociale": "Panificio del Sole",
       "indirizzo": {
-        "viaECivico": "Via Parma, 34",
+        "viaECivico": "Via Mantova, 7",
         "citta": "Roma",
         "provincia": "RM",
         "cap": "00196",
@@ -75,10 +74,31 @@
       },
       "email": "panificiodelsole@gmail.com",
       "telefono": {
-        "prefissoInternazionale": "+39",
-        "numero": "3456345678"
+        "prefissoInternazionale": "0039",
+        "numero": "3294345689"
       },
-      "dataNascita": ""
+      "dataNascita": "",
+      "id": "4"
+    },
+    {
+      "id": "5",
+      "tipologia": "fisica",
+      "nome": "Paolo",
+      "cognome": "Rossi",
+      "ragioneSociale": "",
+      "indirizzo": {
+        "viaECivico": "Piazza Pippo 4",
+        "citta": "Imola",
+        "provincia": "Bo",
+        "cap": "40026",
+        "nazione": "Italia"
+      },
+      "email": "paolorossi@gmail.com",
+      "telefono": {
+        "prefissoInternazionale": "0041",
+        "numero": "3456248677"
+      },
+      "dataNascita": "1980-03-04"
     }
   ]
 }
