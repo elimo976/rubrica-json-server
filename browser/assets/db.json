@@ -1,0 +1,84 @@
+{
+  "contatti": [
+    {
+      "id": "1",
+      "tipologia": "fisica",
+      "nome": "Elisa",
+      "cognome": "Morreale",
+      "ragioneSociale": "",
+      "indirizzo": {
+        "viaECivico": "via Marche 32",
+        "citta": "Viterbo",
+        "provincia": "VT",
+        "cap": "01100",
+        "nazione": "Italia"
+      },
+      "email": "elisamorreale@gmail.com",
+      "telefono": {
+        "prefissoInternazionale": "+39",
+        "numero": "3396248693"
+      },
+      "dataNascita": "1990-01-20"
+    },
+    {
+      "id": "2",
+      "tipologia": "giuridica",
+      "nome": "",
+      "cognome": "",
+      "ragioneSociale": "Serra Fiorita",
+      "indirizzo": {
+        "viaECivico": "Strada Quarticciolo, 34",
+        "citta": "Roma",
+        "provincia": "RM",
+        "cap": "00196",
+        "nazione": "Italia"
+      },
+      "email": "serrafiorita@gmail.com",
+      "telefono": {
+        "prefissoInternazionale": "+39",
+        "numero": "3332345678"
+      },
+      "dataNascita": ""
+    },
+    {
+      "id": "3",
+      "tipologia": "fisica",
+      "nome": "Mario",
+      "cognome": "Rossi",
+      "ragioneSociale": "",
+      "indirizzo": {
+        "viaECivico": "Via Mantova 72",
+        "citta": "Verona",
+        "provincia": "VR",
+        "cap": "37100",
+        "nazione": "Italia"
+      },
+      "email": "mariorossi@gmail.com",
+      "telefono": {
+        "prefissoInternazionale": "+39",
+        "numero": "339456789"
+      },
+      "dataNascita": "1986-12-03"
+    },
+    {
+      "id": "4",
+      "tipologia": "giuridica",
+      "nome": "",
+      "cognome": "",
+      "ragioneSociale": "Panificio del Sole",
+      "indirizzo": {
+        "viaECivico": "Via Parma, 34",
+        "citta": "Roma",
+        "provincia": "RM",
+        "cap": "00196",
+        "nazione": "Italia"
+      },
+      "email": "panificiodelsole@gmail.com",
+      "telefono": {
+        "prefissoInternazionale": "+39",
+        "numero": "3456345678"
+      },
+      "dataNascita": ""
+    }
+  ]
+}
